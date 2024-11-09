@@ -1,32 +1,35 @@
-function calculate(num1, num2, operation) {
-    switch (operation) {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            if (num2 === 0) {
-                throw new Error("Cannot divide by zero");
-            }
-            return num1 / num2;
-        default:
-            throw new Error("Invalid operation");
-    }
+// program for a simple calculator
+let result;
+
+// take the operator input
+const operator = prompt('Enter operator ( either +, -, * or / ): ');
+
+// take the operand input
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+
+switch(operator) {
+    case '+':
+         result = number1 + number2;
+        console.log(${number1} + ${number2} = ${result});
+        break;
+
+    case '-':
+         result = number1 - number2;
+        console.log(${number1} - ${number2} = ${result});
+        break;
+
+    case '*':
+         result = number1 * number2;
+        console.log(${number1} * ${number2} = ${result});
+        break;
+
+    case '/':
+         result = number1 / number2;
+        console.log(${number1} / ${number2} = ${result});
+        break;
+
+    default:
+        console.log('Invalid operator');
+        break;
 }
-
-function main() {
-    const num1 = parseFloat(prompt("Enter the first number:"));
-    const num2 = parseFloat(prompt("Enter the second number:"));
-    const operation = prompt("Enter operation (+, -, *, /):");
-
-    try {
-        const result = calculate(num1, num2, operation);
-        alert("Result: " + result);
-    } catch (error) {
-        alert("Error: " + error.message);
-    }
-}
-
-main();
